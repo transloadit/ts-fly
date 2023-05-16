@@ -48,6 +48,6 @@ jobs:
       - name: Publish to the npm registry
         run: |
           corepack yarn install --immutable
-          corepack yarn npm publish
+          corepack yarn npm publish --access public
         env:
           YARN_NPM_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
