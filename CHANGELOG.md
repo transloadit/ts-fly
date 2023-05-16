@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.1](https://github.com/transloadit/ts-fly/compare/v0.1.0...v0.1.1) (2023-05-16)
+
+
+### Bug Fixes
+
+* **release:** publish as a public package ([402ebbd](https://github.com/transloadit/ts-fly/commit/402ebbd52d4bc052cc17cdcd23040507cb87505d))
+
 ## 0.1.0 (2023-05-16)
 
 
