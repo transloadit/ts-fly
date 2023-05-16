@@ -1,0 +1,42 @@
+{
+	"name": "@transloadit/ts-fly",
+	"version": "0.0.0",
+	"description": "Run TS on-the-fly on Node.js",
+	"packageManager": "yarn@3.5.0+sha224.8f42459cf3e9d5e6b89b7f432466d6b4017c6d948798ba16725e047f",
+	"pre-commit": "lint-staged",
+	"lint-staged": {
+		"*.js": [
+			"eslint --fix --cache",
+			"prettier --write"
+		],
+		"*.{json,yml}": "prettier --write"
+	},
+	"dependencies": {
+		"pirates": "^4.0.5",
+		"sucrase": "^3.32.0"
+	},
+	"engines": {
+		"node": "^16.15.0 || >=18.0.0"
+	},
+	"scripts": {
+		"test": "node --test test",
+		"lint:js": "eslint . --cache",
+		"lint": "run-s --continue-on-error lint:js format:check-diff",
+		"prepare": "husky install",
+		"format:show-diff": "git diff --quiet || (echo 'Unable to show a diff because there are unstaged changes'; false) && (prettier . -w --loglevel silent && git --no-pager diff; git restore .)",
+		"format:check": "prettier -c .",
+		"format:check-diff": "yarn format:check || (yarn format:show-diff && false)"
+	},
+	"bin": "./bin/ts-fly",
+	"devDependencies": {
+		"eslint": "^8.40.0",
+		"lint-staged": "^13.2.2",
+		"npm-run-all": "^4.1.5",
+		"pre-commit": "^1.2.2",
+		"prettier": "^2.8.8"
+	},
+	"resolutions": {
+		"pre-commit": "patch:pre-commit@npm%3A1.2.2#./.yarn/patches/pre-commit-npm-1.2.2-f30af83877.patch"
+	},
+	"license": "MIT"
+}
