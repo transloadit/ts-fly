@@ -7,8 +7,9 @@ ESM-only libraries, as well as `.ts` files.
 
 TypeScript and JavaScript files can also import each other.
 
-Like Sucrase, you should not run this on production. If you do, you are on your
-own.
+Do not use this on production: Sucrase devs already recommend you not to run
+their code on production, the code we're adding in this repo is even more unsafe
+and tailored to Transloadit needs. If you do, you are on your own.
 
 ## Install
 
