@@ -44,8 +44,8 @@ require('./myFile.ts'); // works
 
 ### Limitations
 
-- You can't load `.ts` files from static `import` statements from JS files. You
-  have to use dynamic `import()`, or convert the file to TS.
+- You can't import `.ts` files from ESM. If you want to use ESM syntax, you have
+  convert the file to TS and use `.ts` file extension.
 - By default, we only support `.js` and `.ts` file extensions.
 - Windows would only support the `node -r @transloadit/ts-fly …` form, as the
   executable is a POSIX shell script.
