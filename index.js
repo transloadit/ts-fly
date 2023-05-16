@@ -25,10 +25,9 @@ function addHook(extension, options) {
 					filePath,
 				},
 			);
-			const mapBase64 = Buffer.from(JSON.stringify(sourceMap)).toString(
-				'base64',
-			);
-			const suffix = `//# sourceMappingURL=data:application/json;charset=utf-8;base64,${mapBase64}`;
+			const suffix = `//# sourceMappingURL=data:application/json,${encodeURIComponent(
+				JSON.stringify(sourceMap),
+			)}`;
 			return `${transformedCode}\n${suffix}`;
 		},
 		{ exts: [extension] },
