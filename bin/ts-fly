@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# Get directory of current file.
+cwd=$(cd "$(dirname "${BASH_SOURCE[0]:-${0}}")" && pwd)
+
+# Run node but make sure the first loaded module is ts-fly. This makes it so that
+# any subsequent Typescript code is interpreted correctly.
+exec node -r "${cwd}/../index.js" "$@"
