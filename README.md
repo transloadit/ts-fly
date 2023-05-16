@@ -46,6 +46,8 @@ require('./myFile.ts'); // works
 - You can't load `.ts` files from static `import` statements from JS files. You
   have to use dynamic `import()`, or convert the file to TS.
 - By default, we only support `.js` and `.ts` file extensions.
+- Windows would only support the `node -r @transloadit/ts-fly …` form, as the
+  executable is a POSIX shell script.
 
 ## Contributing
 
