@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.1.2](https://github.com/transloadit/ts-fly/compare/v0.1.1...v0.1.2) (2023-05-16)
+
+
+### Features
+
+* add TS definitions ([015fd8c](https://github.com/transloadit/ts-fly/commit/015fd8c87ba42f0fc87e897b070f4f4452d5fff0))
+
+
+### Bug Fixes
+
+* optimize handling on JS files ([e4c713a](https://github.com/transloadit/ts-fly/commit/e4c713afe78770f623b6836f3d5175a2ccdea5a7))
+
 ## [0.1.1](https://github.com/transloadit/ts-fly/compare/v0.1.0...v0.1.1) (2023-05-16)
 
 
