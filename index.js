@@ -12,13 +12,18 @@ const { transform } = require('sucrase');
 function addHook(extension, options) {
 	return pirates.addHook(
 		(code, filePath) => {
+			code = code.replace(
+				/\bimport(\(['"]\.[^'"]+\.ts['"]\))/g,
+				`Promise.resolve(require$1)`,
+			);
+			if (!options?.transforms) {
+				// If there are no Sucrase transform necessary, we can return the code as is.
+				return code;
+			}
 			const { code: transformedCode, sourceMap } = transform(
 				// Replace dynamic imports of `.ts` files with `require`.
 				// Hooking into the Node.js ESM resolver would take more effort.
-				code.replace(
-					/\bimport(\(['"]\.[^'"]+\.ts['"]\))/g,
-					`Promise.resolve(require$1)`,
-				),
+				code,
 				{
 					...options,
 					sourceMapOptions: { compiledFilename: filePath },
