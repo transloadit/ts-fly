@@ -3,7 +3,7 @@ import { fileURLToPath } from 'node:url';
 import { join } from 'node:path';
 import { once } from 'node:events';
 import { spawn } from 'node:child_process';
-import { tmpdir } from 'node:os';
+import { platform, tmpdir } from 'node:os';
 import assert from 'node:assert';
 import fs from 'node:fs/promises';
 
@@ -17,7 +17,11 @@ const tmpDir = await fs.mkdtemp(join(tmpdir(), 'tsen-test-'));
 await Promise.all([
 	fs.writeFile(
 		join(tmpDir, 'entryPoint.ts'),
-		`#!${fileURLToPath(new URL(bin, ROOT_DIR))}\n
+		`#!${
+			// macOS doesn't support shebangs pointing at scripts for some reason
+			(platform() === 'darwin' ? '/usr/bin/env ' : '') +
+			fileURLToPath(new URL(bin, ROOT_DIR))
+		}\n
     'use strict';
     console.log('this is not undefined', this !== undefined);
     import './static-empty.ts';
