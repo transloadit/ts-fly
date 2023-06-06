@@ -30,7 +30,11 @@ function addHook(extension, options) {
 					filePath,
 				},
 			);
-			const suffix = `//# sourceMappingURL=data:application/json,${encodeURIComponent(
+			// Split the source map comment across two strings so that tools like
+			// source-map-support don't accidentally interpret it as a source map
+			// comment for this file.
+			const sourceMappingURL = 'sourceMappingURL';
+			const suffix = `//# ${sourceMappingURL}=data:application/json,${encodeURIComponent(
 				JSON.stringify(sourceMap),
 			)}`;
 			return `${transformedCode}\n${suffix}`;
