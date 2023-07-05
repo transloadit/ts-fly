@@ -1,5 +1,10 @@
 #!/bin/sh
 
+true /*
+# ^-- We need this so the script can be interpreted by both node and a POSIX shell.
+#     because Yarn Berry ignores the hashbang for some reason.
+# We are using a shell script because spawning a throw-away node process is costly.
+
 # Function is taken from https://stackoverflow.com/a/29835459
 rreadlink() ( # Execute the function in a *subshell* to localize variables and the effect of `cd`.
 
@@ -53,3 +58,8 @@ cwd=$(dirname -- "$(rreadlink "$0")")
 # Run node but make sure the first loaded module is ts-fly. This makes it so that
 # any subsequent Typescript code is interpreted correctly.
 exec node -r "${cwd}/../index.js" "$@"
+
+# And now, the Node.js equivalent:
+# */;require('node:child_process') /*
+# */  .spawn(process.execPath, ['-r', require.resolve('../index.js'), ...process.argv.slice(2)], {stdio: 'inherit'}) /*
+# */    .on('exit', process.exit)
