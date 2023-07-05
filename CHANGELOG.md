@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.3](https://github.com/transloadit/ts-fly/compare/v0.1.2...v0.1.3) (2023-07-05)
+
+
+### Bug Fixes
+
+* integration with Yarn Berry was broken ([99a9c0d](https://github.com/transloadit/ts-fly/commit/99a9c0d855d52225831e4c89628f1750e3aad788))
+* split sourceMap string to avoid false positive ([6dd289c](https://github.com/transloadit/ts-fly/commit/6dd289ce76af62d79dbeb0d2501eae0647f40ab3))
+
 ## [0.1.2](https://github.com/transloadit/ts-fly/compare/v0.1.1...v0.1.2) (2023-05-16)
 
 
