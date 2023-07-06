@@ -47,6 +47,7 @@ function defaultHooks() {
 	addHook('.js');
 	addHook('.ts', {
 		transforms: ['imports', 'typescript'],
+		disableESTransforms: true,
 		// We ask Sucrase to preserve dynamic imports because we replace them
 		// ourselves.
 		preserveDynamicImport: true,
