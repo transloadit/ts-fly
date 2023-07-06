@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.4](https://github.com/transloadit/ts-fly/compare/v0.1.3...v0.1.4) (2023-07-06)
+
+
+### Features
+
+* do not transform already supported ES features ([#8](https://github.com/transloadit/ts-fly/issues/8)) ([3e5c739](https://github.com/transloadit/ts-fly/commit/3e5c7399d1c0bed0c147c18dc4323019b2c75d16))
+
 ## [0.1.3](https://github.com/transloadit/ts-fly/compare/v0.1.2...v0.1.3) (2023-07-05)
 
 
