@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.5](https://github.com/transloadit/ts-fly/compare/v0.1.4...v0.1.5) (2024-03-13)
+
+
+### Features
+
+* add limited support for dynamic specifiers in dynamic imports ([#11](https://github.com/transloadit/ts-fly/issues/11)) ([a06adc5](https://github.com/transloadit/ts-fly/commit/a06adc540a2aea8b28b8ec8ed3cb726e77b2d9bf))
+
 ## [0.1.4](https://github.com/transloadit/ts-fly/compare/v0.1.3...v0.1.4) (2023-07-06)
 
 
