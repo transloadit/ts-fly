@@ -13,7 +13,7 @@ function addHook(extension, options) {
 	return pirates.addHook(
 		(code, filePath) => {
 			code = code.replace(
-				/\bimport(\(['"]\.[^'"]+\.ts['"]\))/g,
+				/\bimport(\(['"`]\.[^'"`]+\.ts[`'"]\))/g,
 				`Promise.resolve(require$1)`,
 			);
 			if (!options?.transforms) {

@@ -50,6 +50,9 @@ require('./myFile.ts'); // works
 - By default, we only support `.js` and `.ts` file extensions.
 - Windows would only support the `node -r @transloadit/ts-fly …` form, as the
   executable is a POSIX shell script.
+- Only literal specifiers which start with `./` and do not contain any `'` or
+  `"` char are fully supported. Support for dynamic imports with dynamic
+  specifiers is limited.
 
 ## Contributing
 
